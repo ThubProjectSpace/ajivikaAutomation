@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8" />
+    	<title>ON and OFF page</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" type="text/css" href="sai4.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.8.0.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    	<script src="index1.js"></script>
+    	<script type="text/javascript">
+            $(document).ready(function(){
+                    
+                    app.initialize();
+                
+               
+
+                     
+                     var bulb1State = 20 ;
+                     var bulb2State = 40 ;
+                     var bulb3State = 60;
+                     var bulb4State = 80;
+                    
+                     var bulb0allState =1;
+                     
+
+                     var fan0allState = 0;
+                     var fan1State = 30;
+                     var fan2State = 50;
+                     var fan3State = 70;
+                     var fan4State = 90;
+                     
+                     
+                     
+
+
+                    
+                    var bulb1 = $('.bulb01');
+                    var bulb2 = $('.bulb02');
+                    var bulb3 = $('.bulb03');
+                    var bulb4 = $('.bulb04');
+                    
+                    var bulb0a = $('.bulb0all');
+                    
+                    var fan0a = $('.fan0all');
+                    var fan1 = $('.fan01');
+                    var fan2 = $('.fan02');
+                    var fan3= $('.fan03');
+                    var fan4 = $('.fan04');
+                    
+                    
+                   
+                   var DELAY = 700,
+                    clicks = 0,
+                    timer = null;
+
+
+        bulb0a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb0allState == 0){
+                        bulb0allState = 0;
+                    }else if(bulb0allState == 0){
+                        bulb0allState = 0;
+                    }
+
+                    var data = bulb0allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+
+
+        bulb1
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb1State == 20){
+                        bulb1State = 21;
+                    }else if(bulb1State == 21){
+                        bulb1State = 20;
+                    }
+
+                    var data = bulb1State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+
+
+
+
+
+
+        bulb2
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb2State == 40){
+                        bulb2State = 41;
+                    }else if(bulb2State == 41){
+                        bulb2State = 40;
+                    }
+
+                    var data = bulb2State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb3
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb3State == 60){
+                        bulb3State = 61;
+                    }else if(bulb3State == 61){
+                        bulb3State = 60;
+                    }
+
+                    var data = bulb3State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb4
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb4State == 80){
+                        bulb4State = 81;
+                    }else if(bulb4State == 81){
+                        bulb4State = 80;
+                    }
+
+                    var data = bulb4State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        
+        
+        fan0a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan0allState == 1){
+                        fan0allState = 1;
+                    }else if(fan0allState == 1){
+                        fan0allState = 1;
+                    }
+
+                    var data = fan0allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+
+
+        fan1
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan1State == 30){
+                        fan1State = 31;
+                    }else if(fan1State == 31){
+                        fan1State = 30;
+                    }
+
+                    var data = fan1State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan2
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan2State == 50){
+                        fan2State = 51;
+                    }else if(fan2State == 51){
+                        fan2State = 50;
+                    }
+
+                    var data = fan2State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan3
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan3State == 70){
+                        fan3State = 71;
+                    }else if(fan3State == 71){
+                        fan3State = 70;
+                    }
+
+                    var data = fan3State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan4
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan4State == 90){
+                        fan4State = 91;
+                    }else if(fan4State == 91){
+                        fan4State = 90;
+                    }
+
+                    var data = fan4State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        
+        
+        
+    });
+
+			
+</script>
+</head>
+
+<body>
+			  
+        <H1 align="center">AJIVIKA CONFERENCE HALL</H1>
+            
+        <table align="center">                  <!-- 1st half -->
+            <tr><h3 align="center" ></h3>
+                
+            </tr>
+                <tr>
+                    <td><button class="bulb01">BULB-1</td>
+                    <td></td>
+                    <td><button class="fan01">BULB-2</td>
+            </tr>
+            <tr>
+                <td><button class="bulb02">FAN-01</td>
+                    <td></td>
+                <td><button class="fan02">FAN-02</td>
+            </tr>
+            <tr>
+                <td><button class="bulb03">FAN-03</td>
+                    <td></td>
+                <td><button class="fan03">FAN-04</td>
+                
+            </tr>
+            <tr>
+                <td><button class="bulb04">FAN-05</td>
+                    <td></td>
+                <td><button class="fan04">FAN-06</td>
+            </tr>
+        
+        
+        <table align="center" border=0>                     <!-- 2nd half -->
+            <tr><h3 align="center" ></h3>
+                
+            </tr>
+              
+        </table>    
+        <table align="center">                                  <!--FULL HALL-->
+            <tr><h3 align="center" >ENTIRE HALL</h3>
+                <td>ALL ON-<button class="bulb0all">ON</td>
+                <td></td>
+                <td>ALL OFF-<button class="fan0all">OFF</td>
+            </tr>
+        </table>
+        
+    </body>
+</html>

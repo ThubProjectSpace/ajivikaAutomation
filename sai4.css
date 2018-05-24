@@ -1,0 +1,24 @@
+.bulb {
+    transition-duration: 0.4s;
+    cursor: pointer;
+border-radius: 4px;
+font-size: 24px;
+}
+
+.bulb1 {
+    background-color:WHITE ; 
+    color: black; 
+    border: 2px solid BLACK ;
+}
+
+.bulb1:hover {
+    background-color:black;
+    color: #f2e6c0;
+}
+body {
+    background-image:url("yes.jpg");
+    background-size:500%;
+}
+H1,h3,td{font-size: 24px;
+COLOR:#e3f1f4;
+}
